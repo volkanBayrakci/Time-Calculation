@@ -50,11 +50,11 @@ export default function App() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="minute">Mola : </label>
+          <label htmlFor="pause">Mola : </label>
           <input
             type="number"
             className="form-control"
-            id="minute"
+            id="pause"
             placeholder="Molayı Giriniz"
             value={pause}
             onChange={(e) => setPause(e.target.value)}
