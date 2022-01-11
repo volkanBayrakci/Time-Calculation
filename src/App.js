@@ -74,10 +74,10 @@ export default function App() {
         </button>
       </div>
       <div className="mt-3 text-center">
-        {resultTwo}
+        {resultTwo} Saat
       </div>
       <div className="mt-3 text-center">
-        {result}
+        {result} Dakika
       </div>
       <hr />
     </div>
