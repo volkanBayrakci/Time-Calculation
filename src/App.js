@@ -74,10 +74,10 @@ export default function App() {
         </button>
       </div>
       <div className="mt-3 text-center">
-        {resultTwo && resultTwo + " " + "Saat"}
+        {resultTwo}
       </div>
       <div className="mt-3 text-center">
-        {result && result + " " + "Dakika"}
+        {result}
       </div>
       <hr />
     </div>
