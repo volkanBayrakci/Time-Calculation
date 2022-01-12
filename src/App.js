@@ -7,6 +7,9 @@ export default function App() {
   const [pause, setPause] = useState();
   const [result, setResult] = useState();
   const [resultTwo, setResultTwo] = useState();
+  const [employee , setEmployee] = useState();
+  const [target , setTarget] = useState();
+  const [resultThree , setResultThree] = useState()
 
   const handleResult = () => {
     const saat = hour * 60;
@@ -22,7 +25,16 @@ export default function App() {
     setHour("");
     setMinute("");
     setPause("");
+    setEmployee("");
+    setTarget("");
   };
+
+  const handleClick = () =>{
+    const personel = employee
+    const hedef = target
+    const birlestir = hedef / 60 / personel / 7.25
+    setResultThree(birlestir)
+  }
 
   return (
     <div className="container mt-3">
@@ -80,6 +92,46 @@ export default function App() {
         {result} Dakika
       </div>
       <hr />
+      <form>
+      <div className="form-group">
+          <label htmlFor="employee">Personel : </label>
+          <input
+            type="number"
+            className="form-control"
+            id="employee"
+            placeholder="Personel Sayısını Giriniz"
+            value={employee}
+            onChange={(e) => setEmployee(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="target">Hedef : </label>
+          <input
+            type="number"
+            className="form-control"
+            id="target"
+            placeholder="Hedefi Giriniz"
+            value={target}
+            onChange={(e) => setTarget(e.target.value)}
+          />
+        </div>
+      </form>
+      <div className="mt-2">
+        <button
+          className="btn btn-success"
+          onClick={handleClick}
+          style={{ marginRight: "5px" }}
+        >
+          Sonuç
+        </button>
+        <button onClick={handleReset} className="btn btn-danger">
+          Sıfırla
+        </button>
+      </div>
+      <div className="mt-3 text-center">
+        {resultThree}
+      </div>
+      <hr/>
     </div>
   );
 }
