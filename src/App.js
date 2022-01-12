@@ -5,11 +5,15 @@ export default function App() {
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [pause, setPause] = useState();
+  const [employee, setEmployee] = useState();
+  const [target, setTarget] = useState();
   const [result, setResult] = useState();
   const [resultTwo, setResultTwo] = useState();
-  const [employee , setEmployee] = useState();
-  const [target , setTarget] = useState();
-  const [resultThree , setResultThree] = useState()
+  const [resultThree, setResultThree] = useState();
+  const [resultFour , setResultFour] = useState();
+
+  
+  
 
   const handleResult = () => {
     const saat = hour * 60;
@@ -29,11 +33,13 @@ export default function App() {
     setTarget("");
   };
 
-  const handleClick = () =>{
+  const handleClick = () => {
     const personel = employee
     const hedef = target
     const birlestir = hedef / 60 / personel / 7.25
+    const toplam = birlestir * 435 
     setResultThree(birlestir)
+    setResultFour(toplam.toFixed(0))
   }
 
   return (
@@ -93,7 +99,7 @@ export default function App() {
       </div>
       <hr />
       <form>
-      <div className="form-group">
+        <div className="form-group">
           <label htmlFor="employee">Personel : </label>
           <input
             type="number"
@@ -131,7 +137,10 @@ export default function App() {
       <div className="mt-3 text-center">
         {resultThree}
       </div>
-      <hr/>
+      <div className="mt-3 text-center">
+      {resultFour} Adet 
+      </div>
+      <hr />
     </div>
   );
 }
