@@ -4,16 +4,16 @@ import { useState } from "react";
 export default function App() {
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
-  const [pause, setPause] = useState();
+  const [pause, setPause] = useState(null);
   const [employee, setEmployee] = useState();
   const [target, setTarget] = useState();
   const [result, setResult] = useState();
   const [resultTwo, setResultTwo] = useState();
   const [resultThree, setResultThree] = useState();
-  const [resultFour , setResultFour] = useState();
+  const [resultFour, setResultFour] = useState();
 
-  
-  
+
+
 
   const handleResult = () => {
     const saat = hour * 60;
@@ -37,7 +37,7 @@ export default function App() {
     const personel = employee
     const hedef = target
     const birlestir = hedef / 60 / personel / 7.25
-    const toplam = birlestir * 435 
+    const toplam = birlestir * 435
     setResultThree(birlestir)
     setResultFour(toplam.toFixed(0))
   }
@@ -84,6 +84,7 @@ export default function App() {
           className="btn btn-success"
           onClick={handleResult}
           style={{ marginRight: "5px" }}
+          disabled={!hour || !minute}
         >
           Sonuç
         </button>
@@ -127,6 +128,7 @@ export default function App() {
           className="btn btn-success"
           onClick={handleClick}
           style={{ marginRight: "5px" }}
+          disabled={!employee || !target}
         >
           Sonuç
         </button>
@@ -138,7 +140,7 @@ export default function App() {
         {resultThree}
       </div>
       <div className="mt-3 text-center">
-      {resultFour} Adet 
+        {resultFour} Adet
       </div>
       <hr />
     </div>
