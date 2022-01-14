@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const TimeCalc = () => {
-  const [hour, setHour] = useState();
+  const [hour, setHour] = useState(null);
   const [minute, setMinute] = useState(null);
   const [pause, setPause] = useState(null);
   const [shift, setShift] = useState();
@@ -82,7 +82,7 @@ const TimeCalc = () => {
           className="btn btn-success"
           onClick={handleResult}
           style={{ marginRight: "5px" }}
-          disabled={!hour}
+          disabled={!shift}
         >
           Sonuç
         </button>
