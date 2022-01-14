@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const TimeCalc = () => {
   const [hour, setHour] = useState();
-  const [minute, setMinute] = useState();
+  const [minute, setMinute] = useState(null);
   const [pause, setPause] = useState(null);
   const [shift, setShift] = useState();
   const [result, setResult] = useState();
@@ -67,10 +67,13 @@ const TimeCalc = () => {
           </div>
           <select class="form-select mt-3" onChange={(e) => setShift(e.target.value)}>
             <option selected>Vardiya Seçiniz</option>
-            <option value="7">7</option>
-            <option value="15">15</option>
-            <option value="23">23</option>
-            <option value="19">19</option>
+            <option value="7">07:00-15:00</option>
+            <option value="15">15:00-23:00</option>
+            <option value="23">23:00-07:00</option>
+            <option value="7">07:00-17:30</option>
+            <option value="19">19:00-07:00</option>
+            <option value="7">07:00-19:00</option>
+
           </select>
         </div>
       </form>
@@ -79,7 +82,7 @@ const TimeCalc = () => {
           className="btn btn-success"
           onClick={handleResult}
           style={{ marginRight: "5px" }}
-          disabled={!hour || !minute}
+          disabled={!hour}
         >
           Sonuç
         </button>
