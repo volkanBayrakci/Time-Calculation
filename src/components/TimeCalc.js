@@ -10,16 +10,18 @@ const TimeCalc = () => {
 
 
   const handleResult = () => {
-    // const saat = hour * 60;
-    // const dakika = (minute / 60) * 60;
-    // const birlestir = saat + dakika - pause;
-    // const cikar = (saat + dakika - pause) / 60;
-    // setResult(birlestir);
-    // setResultTwo(cikar);
-    const calculation = (hour - shift) * 60 + (minute - pause);
-    const result = calculation / 60;
-    setResult(calculation);
-    setResultTwo(result);
+    if (hour >= shift) {
+      const calculation = (hour - shift) * 60 + (minute - pause);
+      const divide = calculation / 60;
+      setResult(calculation);
+      setResultTwo(divide);
+    } else if (shift === "23" || shift === "19") {
+      const time = 24;
+      const calculationTwo = (time - shift) * 60 + hour * 60 + (minute - pause);
+      const divideTwo = calculationTwo / 60;
+      setResult(calculationTwo);
+      setResultTwo(divideTwo);
+    }
   };
 
   const handleReset = (e) => {
