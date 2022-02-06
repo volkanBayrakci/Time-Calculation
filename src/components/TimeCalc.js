@@ -21,6 +21,11 @@ const TimeCalc = () => {
       const divideTwo = calculationTwo / 60;
       setResult(calculationTwo);
       setResultTwo(divideTwo);
+    }else{
+      const calculation = (hour - shift) * 60 + (minute - pause);
+      const divide = calculation / 60;
+      setResult(calculation);
+      setResultTwo(divide);
     }
   };
 
@@ -75,7 +80,6 @@ const TimeCalc = () => {
             <option value="7">07:00-17:30</option>
             <option value="19">19:00-07:00</option>
             <option value="7">07:00-19:00</option>
-
           </select>
         </div>
       </form>
@@ -106,6 +110,7 @@ const TimeCalc = () => {
           </label>
         </div>
       </div>
+      {hour} - {shift}
     </>
   )
 }
