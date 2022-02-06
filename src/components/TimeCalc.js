@@ -110,7 +110,6 @@ const TimeCalc = () => {
           </label>
         </div>
       </div>
-      {hour} - {shift}
     </>
   )
 }
