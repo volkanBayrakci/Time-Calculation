@@ -35,6 +35,8 @@ const TargetCalc = () => {
             placeholder="Personel Sayısını Giriniz"
             value={employee}
             onChange={(e) => setEmployee(e.target.value)}
+            onKeyUp={handleClick}
+
           />
         </div>
         <div className="form-group">
@@ -46,33 +48,35 @@ const TargetCalc = () => {
             placeholder="Hedefi Giriniz"
             value={target}
             onChange={(e) => setTarget(e.target.value)}
+            onKeyUp={handleClick}
+
           />
         </div>
       </form>
       <div className="mt-2">
-        <button
+        {/* <button
           className="btn btn-success"
           onClick={handleClick}
           style={{ marginRight: "5px" }}
           disabled={!employee || !target}
         >
           Sonuç
-        </button>
-        <button onClick={handleReset} className="btn btn-danger">
+        </button> */}
+        <button onClick={handleReset} className="btn btn-danger" >
           Sıfırla
         </button>
       </div>
-      <div className="row mt-2">
+      <div className="row my-2">
         <div className="col-md-6 col-sm-6 col-6">
           <label className="w-100" >
             Dakika Hedefi:
-            <input type="number" value={resultThree} className="form-control" />
+            <input type="number" value={resultThree} className="form-control"  />
           </label>
         </div>
         <div className="col-md-6 col-sm-6 col-6">
           <label className="w-100">
             Gün Sonu Hedefi:
-            <input type="number" value={resultFour} className="form-control" />
+            <input type="number" value={resultFour} className="form-control"   />
           </label>
         </div>
       </div>

@@ -48,6 +48,8 @@ const TimeCalc = () => {
               placeholder="Saati Giriniz"
               value={hour}
               onChange={(e) => setHour(e.target.value)}
+              onKeyUp={handleResult}
+              disabled={!shift}
             />
           </div>
           <div className="form-group">
@@ -59,6 +61,8 @@ const TimeCalc = () => {
               placeholder="Dakikayı Giriniz"
               value={minute}
               onChange={(e) => setMinute(e.target.value)}
+              onKeyUp={handleResult}
+              disabled={!shift}
             />
           </div>
           <div className="form-group">
@@ -70,6 +74,8 @@ const TimeCalc = () => {
               placeholder="Molayı Giriniz"
               value={pause}
               onChange={(e) => setPause(e.target.value)}
+              onKeyUp={handleResult}
+              disabled={!shift}
             />
           </div>
           <select class="form-select mt-3" onChange={(e) => setShift(e.target.value)}>
@@ -84,14 +90,14 @@ const TimeCalc = () => {
         </div>
       </form>
       <div className="mt-2">
-        <button
+        {/* <button
           className="btn btn-success"
           onClick={handleResult}
           style={{ marginRight: "5px" }}
           disabled={!shift}
         >
           Sonuç
-        </button>
+        </button> */}
         <button onClick={handleReset} className="btn btn-danger">
           Sıfırla
         </button>
